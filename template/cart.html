@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<html>
+<head>
+	<title>Shop-Online</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+	<script type="text/javascript" src="{% static 'cr/jquery-3.2.1.js' %}"></script>
+	<script type="text/javascript" src="{% static 'cr/script.js ' %}"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'cr/style.css' %}">
+	<!--- sass styling --->
+	<link rel="stylesheet" type="text/css" href="{% static 'cr/scss/homepageStyles.css' %}">
+	<style>
+	 img{
+		 height: 100px;
+		 width: 100px;
+
+		}
+	</style>
+</head>
+<body>
+
+	<button onclick="topFunction()" id="myBtn" title="Go to top" width="35px" height="35px" align="right">⇑</button>
+
+		<nav class="navbar navbar-toggleable-md navbar-light bg-faded" id="nav-main">
+	  		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	    		<span class="navbar-toggler-icon"></span>
+	  		</button>
+	  		<a class="navbar-brand" href="#" style="padding-left: 12vw; font-size: 30px;">Shop-Online</a>
+	  		<div class="collapse navbar-collapse" id="navbarNav" style="padding-left: 33vw;" >
+	    		<ul class="navbar-nav nav-ul">
+	      			<li class="nav-item" >
+	        			<a class="nav-link" href="#">Products <span class="sr-only">(current)</span></a>
+	      			</li>
+			      <li class="nav-item">
+			        	<a class="nav-link" href="#cartmain">Cart</a>
+			      </li>
+			      <li class="nav-item">
+			      	  <a class="nav-link" href="#about">About</a>
+			      </li>
+	    		</ul>
+	  		</div>
+		</nav>
+		<!-- {% for i in ci %}
+	<div class="container-fluid" id="maincontainer"> -->
+
+	
+		<!-- <div align="center" id="row1" class="row">
+
+			<div class="col-md-4" style="padding-bottom: 15px;">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+<path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+<path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+</svg>
+
+	<i class="bi bi-trash"></i>
+			<a href="{{i.prodt.get_url}}"><img src="{{i.prodt.img.url}}" style="height: 100; width: 100;"/></a>
+				<div id="pro-info">
+					<p class="product-name">{{i.prodt.name}}</p><p class="product-price"> Price:{{i.prodt.price}}</p>
+					<p>Quantity={{i.prodt.quan}}</p>
+
+					<button class="btn btn-secondary" id="btn">Buy Now</button>
+
+				</div>
+				</div>
+			</div>
+	</div> -->
+	
+			<!-- <div class="col-md-4">
+				<img src="cr/images/iphone-7.png">
+				<div id="pro-info">
+					<p class="product-name">Iphone 7</p><p class="product-price">60000</p>
+					<button class="btn btn-secondary" id="btn2">Buy Now</button>
+				</div>
+			</div> 
+
+			</div> -->
+
+	<!-- </div>
+	{% endfor %}  -->
+
+<div id="cartmain" class="container-fluid">
+	<div class="container" id="cart">
+		<div class="row">
+			<div class="col-md-12" id="cart-heading" align="center">
+				Shopping Cart
+			</div>
+		</div>
+		<hr>
+	
+		<div>
+			<table>
+			  <thead>
+			    <tr>
+			      <th>ProductName</th>
+			      <th>Product Image</th>
+			      <th>Price</th>
+			      <th>Quantity</th>
+			      <!-- <th>Total</th> -->
+			    </tr>
+			  </thead>
+			  {% for i in ci %}
+			  <tbody id="item-table-body">
+              <td>{{i.prodt.name}}</td>
+			  <td><a href="{{i.prodt.get_url}}"><img src="{{i.prodt.img.url}}"></a><br>{{i.prodt.price}}x1</td>
+			  <td>{{i.total}}</td>
+			  <td><a href="{% url 'addcart' i.prodt.id %}" ><i class="fa fa-plus" style="font-size:14px"></i></a> &nbsp;&nbsp;{{i.quan}} &nbsp;&nbsp;<a href="{% url 'cart_decrement' i.prodt.id %}"><i class="fa fa-minus" style="font-size:14px"></i></a></td>
+			   <td><a href="{% url 'remove' i.prodt.id %}">Delete</a></td>  
+			</tbody>
+			  {% endfor %}
+			</table>
+     <p align="center">Total={{t}}</p>
+		</div>
+
+			<div class="row" align="center">
+				<div class="col-md-12">
+					<!-- <div>Grand Total : <label id="totalLabel">{{t}}</label> -->
+				</div>
+			</div>
+		</div>
+		<hr>
+
+	</div>
+</div>
+<div id="about" class="container-fluid">	<!-- This div should contain Information about your company -->
+
+	<!-- <div class="row" id="about-row">
+		<div class="col-md-12" align="center">
+		Copyright | Shop-Online
+		</div>
+	</div> -->
+
+</div>
+
+</body>
+</html>
+{% endblock %}
